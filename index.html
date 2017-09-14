@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="lib/exif.js"></script>
+	<style type="text/css">
+		img
+		{
+			width:100%
+		}
+		
+		td
+		{
+			text-align:center;
+			width:500px;
+			height:500px;
+			position:relative;
+			font-size:30px;
+		}
+		
+		.rotate90
+		{
+			-ms-transform: rotate(90deg); /* IE 9 */
+			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+			transform: rotate(90deg);
+		}
+		
+		.rotate180
+		{
+			-ms-transform: rotate(180deg); /* IE 9 */
+			-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+			transform: rotate(180deg);
+		}
+		
+		.rotate270
+		{
+			-ms-transform: rotate(270deg); /* IE 9 */
+			-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+			transform: rotate(270deg);
+		}
+
+		.mirrorY
+		{
+			-moz-transform: scale(-1, 1);
+			-webkit-transform: scale(-1, 1);
+			-o-transform: scale(-1, 1);
+			-ms-transform: scale(-1, 1);
+			transform: scale(-1, 1);
+		}
+		
+		.mirrorX
+		{
+			-moz-transform: scale(1, -1);
+			-webkit-transform: scale(1, -1);
+			-o-transform: scale(1, -1);
+			-ms-transform: scale(1, -1);
+			transform: scale(1, -1);
+		}
+		
+		.mirrorXrotate90
+		{
+			-moz-transform: rotate(90deg) scale(1, -1);
+			-webkit-transform: rotate(90deg) scale(1, -1);
+			-o-transform: rotate(90deg) scale(1, -1);
+			-ms-transform: rotate(90deg) scale(1, -1);
+			transform: rotate(90deg) scale(1, -1);
+		}
+		
+		.mirrorXrotate270
+		{
+			-moz-transform: rotate(270deg) scale(1, -1);
+			-webkit-transform: rotate(270deg) scale(1, -1);
+			-o-transform: rotate(270deg) scale(1, -1);
+			-ms-transform: rotate(270deg) scale(1, -1);
+			transform: rotate(270deg) scale(1, -1);
+		}
+		
+	</style>
+</head>
+<body>
+	<p id="allMetaDataSpan"></p>
+	<table>
+		<tr><th>Original</th><th>EXIF Orientation</th><th>Corrected</th></tr>
+		<tr><td><img class="origin" src="img/Landscape_1.jpg" /></td><td></td><td><img src="img/Landscape_1.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_2.jpg" /></td><td></td><td><img src="img/Landscape_2.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_3.jpg" /></td><td></td><td><img src="img/Landscape_3.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_4.jpg" /></td><td></td><td><img src="img/Landscape_4.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_5.jpg" /></td><td></td><td><img src="img/Landscape_5.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_6.jpg" /></td><td></td><td><img src="img/Landscape_6.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_7.jpg" /></td><td></td><td><img src="img/Landscape_7.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_8.jpg" /></td><td></td><td><img src="img/Landscape_8.jpg" /></td></tr>
+		
+		<tr><td><img class="origin" src="img/Portrait_1.jpg" /></td><td></td><td><img src="img/Portrait_1.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_2.jpg" /></td><td></td><td><img src="img/Portrait_2.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_3.jpg" /></td><td></td><td><img src="img/Portrait_3.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_4.jpg" /></td><td></td><td><img src="img/Portrait_4.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_5.jpg" /></td><td></td><td><img src="img/Portrait_5.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_6.jpg" /></td><td></td><td><img src="img/Portrait_6.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_7.jpg" /></td><td></td><td><img src="img/Portrait_7.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_8.jpg" /></td><td></td><td><img src="img/Portrait_8.jpg" /></td></tr>
+	</table>
+	
+	
+	<script type="text/javascript">
+		
+		var Correct = function (im, o) {
+			
+			switch(o){
+			
+				// rotational stuff
+				case 3: 
+					im.className = 'rotate180';
+					break;
+									
+				case 6: 
+					im.className = 'rotate90';
+					break;
+					
+				case 8: 
+					im.className = 'rotate270';
+					break;
+					
+				// mirrored stuff
+				case 2: 
+					im.className = 'mirrorY';
+					break;
+					
+				case 4: 
+					im.className = 'mirrorX';
+					break;
+					
+				case 5: 
+					im.className = 'mirrorXrotate90';
+					break;
+					
+				case 7: 
+					im.className = 'mirrorXrotate270';
+					break;
+			}
+		};
+		
+		var FixOrientation = function (td, im, corrIm) {
+			
+			console.log('attempting to read data for img ' + im.src)
+			
+			EXIF.getData(im, function() {
+				
+				var orientation = EXIF.getTag(im, "Orientation");
+				
+				td.innerHTML = orientation;
+				
+				Correct(corrIm, orientation);
+			});
+		};
+	
+		var imgs = document.getElementsByClassName("origin");
+
+		for(var i=0; i<imgs.length; i++) {
+
+			var tr = imgs[i].parentNode.parentNode;
+						
+			FixOrientation(tr.children[1], imgs[i], tr.children[2].firstChild);
+		}
+			
+		
+	</script>
+</body>
+</html>
