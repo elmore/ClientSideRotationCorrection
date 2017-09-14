@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Demo2</title>
 	<script type="text/javascript" src="lib/exif.js"></script>
 	<style type="text/css">
 		img
@@ -21,22 +21,22 @@
 		
 		.rotate90
 		{
-			-ms-transform: rotate(90deg); /* IE 9 */
-			-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+			-ms-transform: rotate(90deg); 
+			-webkit-transform: rotate(90deg);
 			transform: rotate(90deg);
 		}
 		
 		.rotate180
 		{
-			-ms-transform: rotate(180deg); /* IE 9 */
-			-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+			-ms-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg); 
 			transform: rotate(180deg);
 		}
 		
 		.rotate270
 		{
-			-ms-transform: rotate(270deg); /* IE 9 */
-			-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+			-ms-transform: rotate(270deg); 
+			-webkit-transform: rotate(270deg); 
 			transform: rotate(270deg);
 		}
 
@@ -44,7 +44,6 @@
 		{
 			-moz-transform: scale(-1, 1);
 			-webkit-transform: scale(-1, 1);
-			-o-transform: scale(-1, 1);
 			-ms-transform: scale(-1, 1);
 			transform: scale(-1, 1);
 		}
@@ -53,7 +52,6 @@
 		{
 			-moz-transform: scale(1, -1);
 			-webkit-transform: scale(1, -1);
-			-o-transform: scale(1, -1);
 			-ms-transform: scale(1, -1);
 			transform: scale(1, -1);
 		}
@@ -62,7 +60,6 @@
 		{
 			-moz-transform: rotate(90deg) scale(1, -1);
 			-webkit-transform: rotate(90deg) scale(1, -1);
-			-o-transform: rotate(90deg) scale(1, -1);
 			-ms-transform: rotate(90deg) scale(1, -1);
 			transform: rotate(90deg) scale(1, -1);
 		}
@@ -71,7 +68,6 @@
 		{
 			-moz-transform: rotate(270deg) scale(1, -1);
 			-webkit-transform: rotate(270deg) scale(1, -1);
-			-o-transform: rotate(270deg) scale(1, -1);
 			-ms-transform: rotate(270deg) scale(1, -1);
 			transform: rotate(270deg) scale(1, -1);
 		}
@@ -82,23 +78,23 @@
 	<p id="allMetaDataSpan"></p>
 	<table>
 		<tr><th>Original</th><th>EXIF Orientation</th><th>Corrected</th></tr>
-		<tr><td><img class="origin" src="img/Landscape_1.jpg" /></td><td></td><td><img src="img/Landscape_1.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_2.jpg" /></td><td></td><td><img src="img/Landscape_2.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_3.jpg" /></td><td></td><td><img src="img/Landscape_3.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_4.jpg" /></td><td></td><td><img src="img/Landscape_4.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_5.jpg" /></td><td></td><td><img src="img/Landscape_5.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_6.jpg" /></td><td></td><td><img src="img/Landscape_6.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_7.jpg" /></td><td></td><td><img src="img/Landscape_7.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Landscape_8.jpg" /></td><td></td><td><img src="img/Landscape_8.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_1.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_2.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_3.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_4.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_5.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_6.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_7.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Landscape_8.jpg" /></td><td></td><td></td></tr>
 		
-		<tr><td><img class="origin" src="img/Portrait_1.jpg" /></td><td></td><td><img src="img/Portrait_1.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_2.jpg" /></td><td></td><td><img src="img/Portrait_2.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_3.jpg" /></td><td></td><td><img src="img/Portrait_3.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_4.jpg" /></td><td></td><td><img src="img/Portrait_4.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_5.jpg" /></td><td></td><td><img src="img/Portrait_5.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_6.jpg" /></td><td></td><td><img src="img/Portrait_6.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_7.jpg" /></td><td></td><td><img src="img/Portrait_7.jpg" /></td></tr>
-		<tr><td><img class="origin" src="img/Portrait_8.jpg" /></td><td></td><td><img src="img/Portrait_8.jpg" /></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_1.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_2.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_3.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_4.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_5.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_6.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_7.jpg" /></td><td></td><td></td></tr>
+		<tr><td><img class="origin" src="img/Portrait_8.jpg" /></td><td></td><td></td></tr>
 	</table>
 	
 	
@@ -153,17 +149,47 @@
 				Correct(corrIm, orientation);
 			});
 		};
-	
-		var imgs = document.getElementsByClassName("origin");
-
-		for(var i=0; i<imgs.length; i++) {
-
-			var tr = imgs[i].parentNode.parentNode;
-						
-			FixOrientation(tr.children[1], imgs[i], tr.children[2].firstChild);
+		
+		var Main = function () {		
+			
+			// originals we want to correct
+			var imgs = document.getElementsByClassName("origin");
+		
+			// enumerate round all original images
+			for(var i=0; i<imgs.length; i++) {
+				
+				// this is the row of the image in scope
+				var tr = imgs[i].parentNode.parentNode;
+				
+				// create a new image so we have full control of the 
+				// onload event (otherwise it may have already 
+				// loaded.. gets harder)
+				newIm = document.createElement('img');
+				
+				// point it at the same as the original
+				newIm.src = imgs[i].src;
+				
+				// drop the new image into the last td in the row
+				tr.children[2].appendChild(newIm);
+				
+				// create a closure round the the function because of 
+				// the loop and the this and the moon and the air
+				var f = (function (el, imo, ims) { 
+				
+					// returns a curried version of the fixed orientation 
+					// function for this image
+					return function() { FixOrientation(el, imo, ims); } 
+					
+				})(tr.children[1], imgs[i], newIm);
+				
+				// attach the fix func to the onload of the specific new
+				// image so all the processing becomes async and completes
+				// for each img as it becomes available
+				newIm.addEventListener('load', f);
+			}
 		}
 			
-		
+		document.addEventListener('DOMContentLoaded', Main);
 	</script>
 </body>
 </html>
