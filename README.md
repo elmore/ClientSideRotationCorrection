@@ -1,4 +1,4 @@
-# ClientSideRotationCorrection
+# Client Side Rotation Correction
 Rotating images based on EXIF data
 
 Using resources from here:
